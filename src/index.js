@@ -19,8 +19,12 @@ const scatterplot = () => new ScatterplotLayer({
     onHover: ({ object, x, y }) => {
         const el = document.getElementById('tooltip');
         if (object) {
-            const { n_killed, incident_id } = object;
-            el.innerHTML = `<h1>ID ${incident_id}</h1><p>${n_killed}</p>`
+            const { date, n_injured, n_killed, incident_id, notes } = object;
+            el.innerHTML = `<strong>ID: ${incident_id} </strong><br>
+            <span style="color: rgb(200, 0, 40)">${n_killed}</span> Dead<br>
+            <span style="color: rgb(255, 140, 0)">${n_injured}</span> Injured
+            <br>Went down on ${date}. ${notes}
+            `
             el.style.display = 'block';
             el.style.opacity = 0.9;
             el.style.left = x + 'px';
