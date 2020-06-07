@@ -1,8 +1,8 @@
 <head>
     <script src="main.js"></script>
 
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=API-KEY&callback=initMap">
-    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initMap"
+        type="text/javascript"></script>
 
     <style>
         body {
@@ -13,11 +13,20 @@
             width: 100vw;
             height: 100vh;
         }
+
+        #tooltip {
+            position: absolute;
+            background: white;
+            margin: 10px;
+            padding: 10px;
+        }
     </style>
 </head>
 
 <body>
 
     <div id="map"></div>
+
+    <div id="tooltip"></div>
 
 </body>
